@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>protoType</title>
+    <script src="./js/jquery.min.js"></script> 
+</head>
+<body>
+
+
+<script>
+	function makeArr(num) {
+		var arr = [];
+		for (var i = 0; i < num; i++) {
+			arr.push('abc');
+		}
+		arr.join('');
+		return arr;
+	}
+	var num = 10000000;
+	function function1() {
+		var arr = makeArr(num);
+		var start = (new Date()).valueOf();
+		var count = 0;
+		for (var i = 0; i < arr.length; i++) {
+			count++;
+		}
+		var end = (new Date()).valueOf();
+		console.log('Count: ' + count + ' times');
+		console.log('Time spent: ' + (end - start));
+	}
+	function function12() {
+		let arr = makeArr(num);
+		let start = (new Date()).valueOf();
+		let count = 0;
+		for (let i = 0; i < arr.length; i++) {
+			count++;
+		}
+		let end = (new Date()).valueOf();
+		console.log('Count: ' + count + ' times');
+		console.log('Time spent: ' + (end - start));
+	}
+	function function2() {
+		var arr = makeArr(num);
+		var start = (new Date()).valueOf();
+		var count = 0;
+		for (var i in arr) {
+			count++;
+		}
+		var end = (new Date()).valueOf();
+		console.log('Count: ' + count + ' times');
+		console.log('Time spent: ' + (end - start));
+	}
+	function function22() {
+		let arr = makeArr(num);
+		let start = (new Date()).valueOf();
+		let count = 0;
+		for (let i in arr) {
+			count++;
+		}
+		let end = (new Date()).valueOf();
+		console.log('Count: ' + count + ' times');
+		console.log('Time spent: ' + (end - start));
+	}
+	function function3() {
+		var arr = makeArr(num);
+		var start = (new Date()).valueOf();
+		var count = 0;
+		for (var i = 0, len = arr.length; i < len; i++) {
+			count++;
+		}
+		var end = (new Date()).valueOf();
+		console.log('Count: ' + count + ' times');
+		console.log('Time spent: ' + (end - start));
+	}
+
+
+	function function4() {
+		var arr = makeArr(num);
+		var start = (new Date()).valueOf();
+		var count = 0;
+		$.each(arr, function () {
+			count++;
+		});
+		var end = (new Date()).valueOf();
+		console.log('Count: ' + count + ' times');
+		console.log('Time spent: ' + (end - start));
+	}
+
+	function function5() {
+		var arr = makeArr(num);
+		var start = (new Date()).valueOf();
+		var count = 0;
+		$(arr).each(function () {
+			count++;
+		});
+		var end = (new Date()).valueOf();
+		console.log('Count: ' + count + ' times');
+		console.log('Time spent: ' + (end - start));
+	}
+
+	function function6() {
+		var arr = makeArr(num);
+		var start = (new Date()).valueOf();
+		var count = 0;
+		for (var i of arr) {
+			count++;
+		}
+		var end = (new Date()).valueOf();
+		console.log('Count: ' + count + ' times');
+		console.log('Time spent: ' + (end - start));
+	}
+
+	var a = [{month: "1"}, {month: "2"}, {month: "3"}, {month: "4"}, {month: "5"}, {month: "6"}, {month: "7"}, {month: "8"}]
+	//测试跳出$.each循环
+	$.each(a, function (i, v) {
+		console.log(i + 1)
+		if (v.month == "3") {
+			console.log(3)
+			return  //退出当前循环
+			console.log(3)
+		}
+	})
+
+	$.each(a, function (i, v) {
+		console.log(i + 1)
+		if (v.month == 5) {
+			console.log(5)
+			return true  //退出当前循环
+			console.log(5)
+		}
+
+	})
+
+	$.each(a, function (i, v) {
+		console.log(i + 1)
+		if (v.month == 7) {
+			console.log(7)
+			return false  //退出所有循环
+			console.log(7)
+		}
+	})
+
+</script>
+for (var i = 0; i < arr.length; i++) <br/>
+<button onClick=function1()>loop 1</button>
+<br/>
+<p id="f1"></p>
+for (let i = 0; i < arr.length; i++) <br/>
+<button onClick=function1()>loop 12</button>
+<br/>
+<p id="f12"></p>
+
+for (var i in arr)<br/>
+<button onClick=function2()>loop 2</button>
+<br/>
+<p id="f2"></p>
+for (let i in arr)<br/>
+<button onClick=function2()>loop 22</button>
+<br/>
+<p id="f22"></p>
+
+for (var i = 0, len = arr.length; i < len; i++)<br/>
+<button onClick=function3()>loop 3</button>
+<br/>
+<p id="f3"></p>
+
+$.each(arr,function(){count++;});<br/>
+<button onClick=function4()>loop 4</button>
+<br/>
+<p id="f4"></p>
+
+$(arr).each(function(){count++;});<br/>
+<button onClick=function5()>loop 5</button>
+<br/>
+<p id="f5"></p>
+
+for (var i of arr)<br/>
+<button onClick=function5()>loop 6</button>
+<br/>
+<p id="f6"></p>
+
+</body>
+</html>
