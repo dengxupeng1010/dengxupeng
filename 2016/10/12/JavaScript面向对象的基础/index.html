@@ -23,7 +23,7 @@
     <link rel="alternative" href="/atom.xml" title="hello world" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.266c1c.css">
   <style type="text/css">
@@ -72,15 +72,11 @@
     			
             
     			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">一些小玩意</a>
     			
             
     			
     			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
-    			
-            
-    			
-    			<a q-on="click: openSlider(e, 'mm')" href="javascript:void(0)">xiaowanyi</a>
     			
             
 		</nav>
@@ -243,7 +239,7 @@
 <h2 id="使用方括号（-）引用对象的属性和方法"><a href="#使用方括号（-）引用对象的属性和方法" class="headerlink" title="使用方括号（[ ]）引用对象的属性和方法"></a>使用方括号（[ ]）引用对象的属性和方法</h2><p>在JavaScript中，每个对象可以看作是多个属性（方法）的集合，引用一个属性（方法）很简单，如：<br>对象名.属性（方法）名<br>还可以用方括号的形式来引用：<br>对象名[“属性（方法）名”]<br>注意，这里的方法名和属性名是一个字符串，不是原先点（? ）号后面的标识符，例如：</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr=<span class="built_in">new</span> Array();</div><div class="line"><span class="comment">//为数组添加一个元素</span></div><div class="line">arr.push(<span class="string">"abc"</span>);</div><div class="line">arr[<span class="string">"push"</span>](<span class="string">"abc"</span>);</div><div class="line"><span class="comment">//获得数组的长度</span></div><div class="line"><span class="keyword">var</span> <span class="built_in">len</span>=arr.length;</div><div class="line"><span class="keyword">var</span> <span class="built_in">len</span>=arr[<span class="string">"length"</span>];</div><div class="line"><span class="comment">//输出数组的长度</span></div><div class="line">alert(<span class="built_in">len</span>);</div><div class="line">由此可见，上面的代码等价于：</div><div class="line"><span class="keyword">var</span> arr=<span class="built_in">new</span> Array();</div><div class="line"><span class="comment">//为数组添加一个元素</span></div><div class="line">arr.push(<span class="string">"abc"</span>);</div><div class="line"><span class="comment">//获得数组的长度</span></div><div class="line"><span class="keyword">var</span> <span class="built_in">len</span>=arr.length;</div><div class="line"><span class="comment">//输出数组的长度</span></div><div class="line">alert(<span class="built_in">len</span>);</div></pre></td></tr></table></figure>
 <p>这种引用属性（方法）的方式和数组类似，体现了JavaScript对象就是一组属性（方法）的集合这个性质。<br>这种用法适合不确定具体要引用哪个属性（方法）的情况，例如：一个对象用于表示用户资料，用一个字符串表示要使用的那个属性，就可以用这种方式来引用：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">language</span>=<span class="string">"JavaScript"</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">&lt;!--</span></div><div class="line"><span class="javascript"><span class="comment">//定义了一个User类，包括两个成员age和sex，并指定了初始值。</span></span></div><div class="line"><span class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">User</span>(<span class="params"></span>)</span>&#123;</span></div><div class="line"><span class="javascript">      <span class="keyword">this</span>.age=<span class="number">21</span>;</span></div><div class="line"><span class="javascript">      <span class="keyword">this</span>.sex=<span class="string">"male"</span>;</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="javascript"><span class="comment">//创建user对象</span></span></div><div class="line"><span class="javascript"><span class="keyword">var</span> user=<span class="keyword">new</span> User();</span></div><div class="line"><span class="javascript"><span class="comment">//根据下拉列表框显示用户的信息</span></span></div><div class="line"><span class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params">slt</span>)</span>&#123;</span></div><div class="line"><span class="javascript">      <span class="keyword">if</span>(slt.selectedIndex!=<span class="number">0</span>)&#123;</span></div><div class="line"><span class="undefined">               alert(user[slt.value]);</span></div><div class="line"><span class="undefined">      &#125;</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="javascript"><span class="comment">//--&gt;</span></span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="comment">&lt;!--下拉列表框用于选择用户信息--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">onchange</span>=<span class="string">"show(this)"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">option</span>&gt;</span>请选择需要查看的信息：<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"age"</span>&gt;</span>年龄<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"sex"</span>&gt;</span>性别<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">language</span>=<span class="string">"JavaScript"</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">&lt;!--</span></div><div class="line"><span class="actionscript"><span class="comment">//定义了一个User类，包括两个成员age和sex，并指定了初始值。</span></span></div><div class="line"><span class="actionscript"><span class="function"><span class="keyword">function</span> <span class="title">User</span><span class="params">()</span></span>&#123;</span></div><div class="line"><span class="actionscript">      <span class="keyword">this</span>.age=<span class="number">21</span>;</span></div><div class="line"><span class="actionscript">      <span class="keyword">this</span>.sex=<span class="string">"male"</span>;</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="actionscript"><span class="comment">//创建user对象</span></span></div><div class="line"><span class="actionscript"><span class="keyword">var</span> user=<span class="keyword">new</span> User();</span></div><div class="line"><span class="actionscript"><span class="comment">//根据下拉列表框显示用户的信息</span></span></div><div class="line"><span class="actionscript"><span class="function"><span class="keyword">function</span> <span class="title">show</span><span class="params">(slt)</span></span>&#123;</span></div><div class="line"><span class="actionscript">      <span class="keyword">if</span>(slt.selectedIndex!=<span class="number">0</span>)&#123;</span></div><div class="line"><span class="undefined">               alert(user[slt.value]);</span></div><div class="line"><span class="undefined">      &#125;</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="actionscript"><span class="comment">//--&gt;</span></span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="comment">&lt;!--下拉列表框用于选择用户信息--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">onchange</span>=<span class="string">"show(this)"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">option</span>&gt;</span>请选择需要查看的信息：<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"age"</span>&gt;</span>年龄<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"sex"</span>&gt;</span>性别<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>在这段代码中，使用一个下拉列表框让用户选择查看哪个信息，每个选项的value就表示用户对象的属性名称。这时如果不采用方括号的形式，可使用如下代码来实现：</p>
 <figure class="highlight ceylon"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> show(slt)&#123;</div><div class="line">      <span class="keyword">if</span>(slt.selectedIndex!=<span class="number">0</span>)&#123;</div><div class="line">              <span class="keyword">if</span>(slt.<span class="keyword">value</span>==<span class="string">"age"</span>)alert(user.age);</div><div class="line">              <span class="keyword">if</span>(slt.<span class="keyword">value</span>==<span class="string">"sex"</span>)alert(user.sex);</div><div class="line">      &#125;</div><div class="line">&#125;</div><div class="line">而使用方括号语法，则只需写为：</div><div class="line">alert(user[slt.<span class="keyword">value</span>]);</div></pre></td></tr></table></figure>
 <p>方括号语法像一种参数语法，可用一个变量来表示引用对象的哪个属性。如果不采用这种方法，又不想用条件判断，可以使用eval函数：<br>alert(eval(“user.”+slt.value));<br>这里利用eval函数的性质，执行了一段动态生成的代码，并返回了结果。<br>实际上，在前面讲述document的集合对象时，就有类似方括号的用法，比如引用页面中一个名为“theForm”的表单对象，以前的用法是：</p>
@@ -269,7 +265,7 @@
 <h2 id="使用大括号（-）语法创建无类型对象"><a href="#使用大括号（-）语法创建无类型对象" class="headerlink" title="使用大括号（{ }）语法创建无类型对象"></a>使用大括号（{ }）语法创建无类型对象</h2><p>传统的面向对象语言中，每个对象都会对应到一个类。刚提到的this指针时提到，JavaScript中的对象其实就是属性（方法）的一个集合，并没有严格意义上类的概念。所以它提供了一种简单的方式来创建对象，即大括号（{}）语法：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="string">&#123;</span></div><div class="line"><span class="attr">      property1:</span><span class="string">statement,</span></div><div class="line"><span class="attr">      property2:</span><span class="string">statement2,</span></div><div class="line">      <span class="string">…,</span></div><div class="line"><span class="attr">      propertyN:</span><span class="string">statmentN</span></div><div class="line"><span class="string">&#125;</span></div></pre></td></tr></table></figure>
 <p>通过大括号括住多个属性或方法及其定义（这些属性或方法用逗号隔开），来实现对象的定义，这段代码就直接定义个了具有n个属性或方法的对象，其中属性名和其定义之间用冒号（:）隔开。例如：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">language</span>=<span class="string">"JavaScript"</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">&lt;!--</span></div><div class="line"><span class="javascript"><span class="keyword">var</span> obj=&#123;&#125;;     <span class="comment">//定义了一个空对象</span></span></div><div class="line"><span class="javascript"><span class="keyword">var</span> user=&#123;</span></div><div class="line"><span class="javascript">      name:<span class="string">"jack"</span>,   <span class="comment">//定义了name属性，初始化为jack</span></span></div><div class="line"><span class="javascript">      favoriteColor:[<span class="string">"red"</span>,<span class="string">"green"</span>,<span class="string">"black"</span>,<span class="string">"white"</span>],<span class="comment">//定义了颜色喜好数组</span></span></div><div class="line"><span class="javascript">      hello:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  <span class="comment">//定义了方法hello</span></span></div><div class="line"><span class="javascript">             alert(<span class="string">"hello,"</span>+<span class="keyword">this</span>.name);</span></div><div class="line"><span class="undefined">      &#125;,</span></div><div class="line"><span class="javascript">      sex:<span class="string">"male"</span>    <span class="comment">//定义了性别属性sex，初始化为male</span></span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="javascript"><span class="comment">//调用user对象的方法hello</span></span></div><div class="line"><span class="undefined">user.hello();</span></div><div class="line"><span class="javascript"><span class="comment">//--&gt;</span></span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">language</span>=<span class="string">"JavaScript"</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">&lt;!--</span></div><div class="line"><span class="actionscript"><span class="keyword">var</span> obj=&#123;&#125;;     <span class="comment">//定义了一个空对象</span></span></div><div class="line"><span class="actionscript"><span class="keyword">var</span> user=&#123;</span></div><div class="line"><span class="actionscript">      name:<span class="string">"jack"</span>,   <span class="comment">//定义了name属性，初始化为jack</span></span></div><div class="line"><span class="actionscript">      favoriteColor:[<span class="string">"red"</span>,<span class="string">"green"</span>,<span class="string">"black"</span>,<span class="string">"white"</span>],<span class="comment">//定义了颜色喜好数组</span></span></div><div class="line"><span class="actionscript">      hello:<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;  <span class="comment">//定义了方法hello</span></span></div><div class="line"><span class="actionscript">             alert(<span class="string">"hello,"</span>+<span class="keyword">this</span>.name);</span></div><div class="line"><span class="undefined">      &#125;,</span></div><div class="line"><span class="actionscript">      sex:<span class="string">"male"</span>    <span class="comment">//定义了性别属性sex，初始化为male</span></span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="actionscript"><span class="comment">//调用user对象的方法hello</span></span></div><div class="line"><span class="undefined">user.hello();</span></div><div class="line"><span class="actionscript"><span class="comment">//--&gt;</span></span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>第一行定义了一个无类型对象obj，它等价于：<br>var obj=new Object();<br>接着定义了一个对象user及其属性和方法。注意，除了最后一个属性（方法）定义，其他的必须以逗号（,）结尾。其实，使用动态增减属性的方法也可以定义一个完全相同的user对象，可使用前面介绍的方法实现。</p>
 <p>使用这种方式来定义对象，还可以使用字符串作为属性（方法）名，例如：var obj={“001”:”abc”}</p>
 <p>这就给对象obj定义了一个属性“001”，这并不是一个有效的标识符，所以要引用这个属性必须使用方括号语法：<br>obj[“001”];</p>
@@ -480,29 +476,21 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
       
     
-      
-      
-      
-    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 25%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 25%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">一些小玩意</a></li>
       
         
       
-      <li style="width: 25%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
-      
-        
-      
-      <li style="width: 25%" q-on="click: openSlider(e, 'mm')"><a href="javascript:void(0)" q-class="active:mm">xiaowanyi</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -523,6 +511,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
@@ -531,7 +523,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">服务器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -540,18 +540,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">服务器</a>
               </li>
             
             <div class="clearfix"></div>
@@ -603,7 +591,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="http://www.dengxupeng.cn/demo/for.html" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>JS循环效率对比</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://www.dengxupeng.cn/demo/zhuankaui.html" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>打砖块小游戏</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://www.dengxupeng.cn/demo/prototype.html" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>各种原型</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://www.dengxupeng.cn/demo/canvas.html" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>canvas水瓶</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://www.dengxupeng.cn/demo/browserVersion.html" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>浏览器检测</a>
             </li>
           
         </ul>
